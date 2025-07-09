@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "id": "1752049332461",
+      "userId": 1,
+      "title": "test",
+      "body": "test asjdkasjdk"
+    },
+    {
+      "id": "1752049339458",
+      "userId": 1,
+      "title": "222",
+      "body": "244"
+    },
+    {
+      "id": "1752049659455",
+      "userId": 1,
+      "title": "test 123678",
+      "body": "adaskdj"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
