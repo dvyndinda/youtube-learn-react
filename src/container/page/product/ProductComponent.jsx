@@ -16,6 +16,7 @@ class ProductComponent extends Component {
   render() {
     return (
       <Fragment>
+        <p className="section-title">Product</p>
         <div className="header">
           <div className="logo">
             <img

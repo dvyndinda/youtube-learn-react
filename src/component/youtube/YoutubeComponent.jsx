@@ -1,7 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./YoutubeComponent.css";
 
-const YoutubeComponent = ({time = '00.00', title = 'Ini Judulnya', description = 'Ini Descriptionnya'}) => {
+const YoutubeComponent = ({
+  time = "00.00",
+  title = "Ini Judulnya",
+  description = "Ini Descriptionnya",
+}) => {
   return (
     <div className="youtube-wrapper">
       <div className="img-thumb">

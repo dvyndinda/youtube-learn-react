@@ -1,8 +1,12 @@
-import React, { Component } from "react";
-// import YoutubeComponent from "../../component/youtube/YoutubeComponent";
-// import ProductComponent from "../product/ProductComponent";
-// import LifeCycleComponent from "../lifecycle/LifeCycleComponent";
-import BlogPost from "../blog/BlogPost";
+import React, { Component, Fragment } from "react";
+import ProductComponent from "../page/product/ProductComponent";
+import LifeCycleComponent from "../page/lifecycle/LifeCycleComponent";
+import BlogPost from "../page/blog/BlogPost";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router";
+import './HomeComponent.css'
+import YoutubePage from "../page/youtube/YoutubePage";
+import BlogPostDetail from "../page/blog/detail/BlogPostDetail";
+import HookPage from "../page/hookpage/HookPage";
 
 class HomeComponent extends Component {
   state = {
@@ -18,27 +22,23 @@ class HomeComponent extends Component {
   }
   render() {
     return (
-      <div>
-        {/* <p>Youtube Component</p>
-        <hr />
-        <YoutubeComponent time="7.12" title="Tutorial Part 1"  description="100x ditonton, 5 menit yang lalu"/>
-        <YoutubeComponent time="8.20" title="Tutorial Part 2" description="200x ditonton, 5 menit yang lalu"/>
-        <YoutubeComponent time="10.00" title="Tutorial Part 3" description="300x ditonton, 5 menit yang lalu"/>
-        <YoutubeComponent time="12.00" title="Tutorial Part 4" description="400x ditonton, 5 menit yang lalu"/>
-        <YoutubeComponent /> */}
-
-        {/* <p>Product Component</p>
-        <hr />
-        <ProductComponent /> */}
-
-        {/* <p>LifeCycle Component</p>
-        <hr />
-        {this.state.showComponent ? <LifeCycleComponent /> : null} */}
-
-        {/* <p>Blog Post</p>
-        <hr /> */}
-        <BlogPost />
-      </div>
+      <Router>
+        <div className="navigation">
+          <Link to="/">Blog</Link>
+          <Link to="/product">Product</Link>
+          <Link to="/lifecycle">Lifecycle</Link>
+          <Link to="/youtube">Youtube</Link>
+          <Link to="/hook">Hook</Link>
+        </div>
+        <Routes>
+          <Route path="/" element={<BlogPost/>} />
+          <Route path="/detail-post/:id" element={<BlogPostDetail/>} />
+          <Route path="/product" element={<ProductComponent/>} />
+          <Route path="/lifecycle" element={<LifeCycleComponent/>} />
+          <Route path="/youtube" element={<YoutubePage/>} />
+          <Route path="/hook" element={<HookPage/>} />
+        </Routes>
+      </Router>
     );
   }
 }

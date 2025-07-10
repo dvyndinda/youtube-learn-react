@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from "react";
 import "./BlogPost.css";
-import PostComponent from "../../component/post/PostComponent";
+import PostComponent from "../../../component/post/PostComponent";
 import axios from "axios";
+import { withRouter } from "../../../hook/withRouter";
 
 class BlogPost extends Component {
   state = {
@@ -128,6 +129,10 @@ class BlogPost extends Component {
     this.getPostAPI();
   }
 
+  handleDetail = (data) => {
+    this.props.navigate(`/detail-post/${data}`);
+  }
+
   render() {
     return (
       <Fragment>
@@ -162,6 +167,7 @@ class BlogPost extends Component {
               data={post}
               update={this.handleUpdate}
               remove={this.handleRemove}
+              goDetail={this.handleDetail}
             />
           );
         })}
@@ -170,4 +176,4 @@ class BlogPost extends Component {
   }
 }
 
-export default BlogPost;
+export default withRouter(BlogPost);

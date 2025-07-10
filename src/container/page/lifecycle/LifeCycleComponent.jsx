@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./LifeCycleComponent.css";
 
 class LifeCycleComponent extends Component {
@@ -26,7 +26,7 @@ class LifeCycleComponent extends Component {
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    return null; 
+    return null;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {}
@@ -35,12 +35,19 @@ class LifeCycleComponent extends Component {
 
   changeCount = () => {
     this.setState({
-        count: this.state.count + 1
-    })
-  }
+      count: this.state.count + 1,
+    });
+  };
 
   render() {
-    return <button className="btn" onClick={this.changeCount}>Component Button {this.state.count}</button>;
+    return (
+      <Fragment>
+         <p className="section-title">Lifecyle</p>
+        <button className="btn" onClick={this.changeCount}>
+          Component Button {this.state.count}
+        </button>
+      </Fragment>
+    );
   }
 }
 
